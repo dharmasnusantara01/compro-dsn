@@ -1,0 +1,206 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+/*
+ * Design System — Dharma Sentosa Nusantara
+ * Direction: "Warm Authority"
+ *
+ * Fonts:
+ *   Plus Jakarta Sans  — headlines. Indonesian-origin typeface (Tokotype foundry).
+ *                        Geometric humanist with warmth. Used in Tokopedia, Koinworks.
+ *   DM Sans            — body. Colophon Foundry. Optically balanced, warmer than Inter.
+ *                        Used by Figma, Pitch, Loom.
+ *   Syne               — numerals/stats only. Adds personality to key numbers.
+ *
+ * Colors:
+ *   Canvas   #F5F4F0   — warm off-white. Every page feels crafted, not defaulted.
+ *   Ink      #18161A   — warm near-black. Softer than #000; reduces harsh contrast.
+ *   Sapphire #09305F   — deep true blue. Premium, no teal ambiguity.
+ *   Terra    #C35D27   — burnt terracotta. CTA-only. References Indonesian earth
+ *                        tones (tanah merah). Creates contrast without neon.
+ *   Forest   #176457   — deep teal. Trust badges, success states.
+ *
+ * Icons:
+ *   Phosphor Icons (phosphoricons.com) — consistent 1.5px stroke weight across
+ *   all 6 weights. Far more cohesive than mixing Heroicons with emoji.
+ */
+
+@theme {
+    --font-display: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+    --font-sans:    'DM Sans',           ui-sans-serif, system-ui, sans-serif;
+    --font-numeric: 'Syne',              ui-sans-serif, system-ui, sans-serif;
+
+    /* Warm neutrals — all share the same warm undertone */
+    --color-ink-950:    #18161A;
+    --color-ink-800:    #2E2B2F;
+    --color-ink-600:    #474341;
+    --color-ink-400:    #7A7671;
+    --color-ink-200:    #C4C0B9;
+    --color-ink-100:    #DDD9D2;
+    --color-ink-50:     #EDEBE5;
+    --color-canvas:     #F5F4F0;
+
+    /* Brand sapphire — true blue, no teal ambiguity */
+    --color-navy-950:   #021628;  /* near-black sapphire — deepest dark */
+    --color-navy-900:   #09305F;  /* deep sapphire — hero, dark sections  */
+    --color-navy-700:   #1559A0;  /* mid sapphire — icons, labels         */
+    --color-navy-500:   #3B7EC4;  /* vivid blue — links, active states    */
+    --color-navy-100:   #C2D8F0;
+    --color-navy-50:    #E8F2FB;
+
+    /* Terracotta — CTA accent only */
+    --color-terra-800:  #9E4318;
+    --color-terra-600:  #C35D27;
+    --color-terra-400:  #D97C4D;
+    --color-terra-50:   #FAF0E8;
+
+    /* Forest teal — trust, success */
+    --color-forest-700: #176457;
+    --color-forest-500: #22897A;
+    --color-forest-50:  #E8F5F3;
+}
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+        font-family: var(--font-sans);
+        color: var(--color-ink-800);
+        background-color: var(--color-canvas);
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-family: var(--font-display);
+        color: var(--color-ink-950);
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+    }
+}
+
+@layer components {
+
+    /* Buttons */
+    .btn-primary {
+        @apply inline-flex items-center gap-2 font-semibold px-5 py-2.5 rounded-lg transition-all duration-150;
+        background-color: var(--color-navy-900);
+        color: #fff;
+        font-family: var(--font-display);
+        font-size: 0.9rem;
+        letter-spacing: -0.01em;
+    }
+    .btn-primary:hover {
+        background-color: var(--color-navy-950);
+        transform: translateY(-1px);
+    }
+
+    .btn-cta {
+        @apply inline-flex items-center gap-2 font-semibold px-6 py-3 rounded-lg transition-all duration-150;
+        background-color: var(--color-terra-600);
+        color: #fff;
+        font-family: var(--font-display);
+        letter-spacing: -0.01em;
+    }
+    .btn-cta:hover {
+        background-color: var(--color-terra-800);
+        transform: translateY(-1px);
+    }
+
+    .btn-ghost {
+        @apply inline-flex items-center gap-2 font-medium px-5 py-2.5 rounded-lg transition-all duration-150;
+        color: var(--color-navy-900);
+        border: 1px solid var(--color-ink-100);
+        background-color: transparent;
+        font-family: var(--font-display);
+        font-size: 0.9rem;
+    }
+    .btn-ghost:hover {
+        border-color: var(--color-navy-500);
+        background-color: var(--color-navy-50);
+    }
+
+    /* Layout */
+    .section-padding { @apply py-24 md:py-32; }
+    .container-box   { @apply max-w-7xl mx-auto px-5 sm:px-10; }
+
+    /* Section label — small caps treatment */
+    .section-label {
+        display: inline-block;
+        font-family: var(--font-display);
+        font-size: 0.72rem;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--color-navy-700);
+    }
+
+    /* Divider */
+    .divider { border-color: var(--color-ink-100); }
+
+    /* Cards — lighter touch than before */
+    .card {
+        background: #fff;
+        border: 1px solid var(--color-ink-100);
+        border-radius: 12px;
+        transition: border-color 0.15s, box-shadow 0.15s;
+    }
+    .card:hover {
+        border-color: var(--color-ink-200);
+        box-shadow: 0 4px 20px rgba(28, 58, 86, 0.07);
+    }
+
+    /* Scroll reveal */
+    .fade-up {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+                    transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    /* Stat number — Syne font */
+    .stat-number {
+        font-family: var(--font-numeric);
+        font-weight: 700;
+        letter-spacing: -0.03em;
+        line-height: 1;
+    }
+
+    /* Inline icon wrapper */
+    .icon-wrap {
+        @apply flex items-center justify-center rounded-xl;
+        width: 48px;
+        height: 48px;
+        background-color: var(--color-navy-50);
+        flex-shrink: 0;
+    }
+    .icon-wrap svg { color: var(--color-navy-700); }
+
+    /* Nav link */
+    .nav-link {
+        font-family: var(--font-display);
+        font-size: 0.875rem;
+        font-weight: 500;
+        color: var(--color-ink-600);
+        padding: 0.35rem 0.75rem;
+        border-radius: 6px;
+        transition: color 0.15s, background-color 0.15s;
+        letter-spacing: -0.01em;
+    }
+    .nav-link:hover      { color: var(--color-navy-900); background-color: var(--color-ink-50); }
+    .nav-link.active     { color: var(--color-navy-900); background-color: var(--color-navy-50); }
+
+    /* Prose refinements */
+    .prose h2 { font-family: var(--font-display); }
+    .prose h3 { font-family: var(--font-display); }
+    .prose a  { color: var(--color-navy-700); }
+}
