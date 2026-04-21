@@ -9,14 +9,8 @@
                     by thin lines — referencing network topology (IT), and the three
                     words Dharma · Sentosa · Nusantara. Simple enough to work at 16px.
                 --}}
-                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class="shrink-0">
-                    <circle cx="16" cy="7"  r="3.5" fill="#1C3A56"/>
-                    <circle cx="6"  cy="24" r="2.5" fill="#1C3A56"/>
-                    <circle cx="26" cy="24" r="3"   fill="#1C3A56"/>
-                    <line x1="16" y1="10"  x2="7"  y2="22" stroke="#1C3A56" stroke-width="1.25" stroke-linecap="round" opacity="0.5"/>
-                    <line x1="16" y1="10"  x2="25" y2="22" stroke="#1C3A56" stroke-width="1.25" stroke-linecap="round" opacity="0.5"/>
-                    <line x1="8"  y1="24"  x2="23" y2="24" stroke="#1C3A56" stroke-width="1.25" stroke-linecap="round" opacity="0.5"/>
-                </svg>
+               <img src="{{ asset('images/logo_dsn.png') }}" alt="DSN Logo" class="h-20">
+                
                 <div>
                     <div style="font-family:var(--font-display);font-weight:700;font-size:0.9rem;letter-spacing:-0.02em;color:#1C3A56;line-height:1.1;">
                         DSN
