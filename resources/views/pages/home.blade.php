@@ -31,7 +31,7 @@
 
                 <div class="flex flex-wrap items-center gap-3 mb-14">
                     <a href="{{ route('contact') }}" class="btn-cta" style="font-size:0.95rem;padding:0.8rem 1.75rem;">
-                        Jadwalkan Sesi Audit Gratis
+                        Jadwalkan Sesi Konsultasi Gratis
                         <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
                     </a>
                     <a href="{{ route('portfolio.index') }}"
@@ -280,8 +280,8 @@
             <div class="fade-up">
                 @php
                     $reasons = [
-                        ['num' => '01', 'title' => 'Audit dulu, proposal kemudian',
-                         'body' => 'Terlalu banyak vendor kirim proposal generik tanpa pernah melihat sistem Anda. Kami selalu mulai dengan audit kondisi existing — gratis, 60 menit, tanpa presentasi produk.'],
+                        ['num' => '01', 'title' => 'Konsultasi dulu, proposal kemudian',
+                         'body' => 'Terlalu banyak vendor kirim proposal generik tanpa pernah melihat sistem Anda. Kami selalu mulai dengan sesi konsultasi kondisi existing — gratis, 60 menit, tanpa presentasi produk.'],
                         ['num' => '02', 'title' => 'Penalti tertulis jika kami tidak memenuhi SLA',
                          'body' => 'Response ≤ 2 jam untuk insiden kritis ada di kontrak, bukan di slide. Jika kami gagal memenuhinya, ada kompensasi yang bisa Anda klaim — bukan sekadar permintaan maaf.'],
                         ['num' => '03', 'title' => 'Anda yang pegang semua akses, selamanya',
@@ -508,7 +508,7 @@
 
             <div class="flex flex-col sm:flex-row gap-3 shrink-0">
                 <a href="{{ route('contact') }}" class="btn-cta" style="font-size:0.95rem;padding:0.875rem 2rem;white-space:nowrap;">
-                    Jadwalkan Sesi Audit
+                    Jadwalkan Sesi Konsultasi
                     <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
                 </a>
                 <a href="tel:{{ str_replace([' ','-'], '', config('dsn.phone')) }}"
